@@ -16,9 +16,9 @@ import java.util.List;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String name;
-    String description;
+    private int id;
+    private String name;
+    private String description;
 
     @ManyToMany(mappedBy = "projects")
     private List<Employee> employees;

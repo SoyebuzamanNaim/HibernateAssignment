@@ -17,9 +17,9 @@ import java.util.List;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String name;
-    String email;
+    private int id;
+    private String name;
+    private String email;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "dept_id")

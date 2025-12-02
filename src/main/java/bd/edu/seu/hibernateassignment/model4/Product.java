@@ -1,4 +1,4 @@
-package bd.edu.seu.hibernateassignment.model3;
+package bd.edu.seu.hibernateassignment.model4;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,12 +13,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String description;
+    private double price;
 
-    @OneToMany(mappedBy = "dept", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Employee> employees;
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
 }
