@@ -23,4 +23,8 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
+
+    @ElementCollection
+    @CollectionTable(name = "product_item", joinColumns = @JoinColumn(name = "product_id"))
+    private List<String> tags;
 }
